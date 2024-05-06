@@ -1,20 +1,20 @@
 <?php
    session_start();
 
-   // Initialize session variables if not set
+   // Iniciamos unas variables por defecto
    if (!isset($_SESSION['idioma'])) {
-       $_SESSION['idioma'] = "Español"; // Set default language to Español
+       $_SESSION['idioma'] = "Español"; 
    }
    
    if (!isset($_SESSION['perfil'])) {
-       $_SESSION['perfil'] = "No"; // Set default profile to No
+       $_SESSION['perfil'] = "No"; 
    }
    
    if (!isset($_SESSION['horario'])) {
-       $_SESSION['horario'] = "GMT-2"; // Set default timezone to GMT-2
+       $_SESSION['horario'] = "GMT-2"; 
    }
    
-   // Handle form submission
+   // Aquí va el posteado de las varaibles
    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        if (!empty($_POST['idioma']) && !empty($_POST['perfil']) && !empty($_POST['horario'])) {
            $_SESSION['idioma'] = $_POST['idioma'];
