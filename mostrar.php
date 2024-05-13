@@ -18,13 +18,14 @@ if (!isset($_SESSION['horario'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     session_destroy();
     $_SESSION = array();
-    $correcto = "Preferencias predeterminadas reestablecidas";
+    $correcto = "<span style='color: blue;'>Preferencias predeterminadas reestablecidas</span>";
+    
 }
  
 // Obtener variables de sesión o usar los valores predeterminados
 $idioma = isset($_SESSION['idioma']) ? $_SESSION['idioma'] : "Español";
 $perfil = isset($_SESSION['perfil']) ? $_SESSION['perfil'] : "No";
-$horario = isset($_SESSION['horario']) ? $_SESSION['horario'] : "GMT-2";
+$horario = isset($_SESSION['horario']) ? $_SESSION['horario'] : "GMT";
 ?>
 
 

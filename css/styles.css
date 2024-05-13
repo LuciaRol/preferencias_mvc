@@ -9,7 +9,7 @@ body, html {
 
 form {
     width: 80%;
-    max-width: 400px; /* Ajusta el ancho máximo según tus preferencias */
+    max-width: 400px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -38,7 +38,7 @@ select, input[type="submit"] {
 }
 
 input[type="submit"] {
-    background-color: #007bff;
+    background-color: #808000;
     color: #fff;
     cursor: pointer;
 }
@@ -46,6 +46,6 @@ input[type="submit"] {
 a {
     display: block;
     text-align: center;
-    color: #007bff;
+    color: #808000;
     text-decoration: none;
 }

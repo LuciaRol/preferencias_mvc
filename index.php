@@ -1,7 +1,7 @@
 <?php
    session_start();
 
-   // Iniciamos unas variables por defecto
+   // Iniciamos unas variables por defecto: en español, perfil privado y hora GMT del meridiano
    if (!isset($_SESSION['idioma'])) {
        $_SESSION['idioma'] = "Español"; 
    }
@@ -11,7 +11,7 @@
    }
    
    if (!isset($_SESSION['horario'])) {
-       $_SESSION['horario'] = "GMT-2"; 
+       $_SESSION['horario'] = "GMT"; 
    }
    
    // Aquí va el posteado de las variables
@@ -20,9 +20,11 @@
            $_SESSION['idioma'] = $_POST['idioma'];
            $_SESSION['perfil'] = $_POST['perfil'];
            $_SESSION['horario'] = $_POST['horario'];
-           $correcto = "Información guardada";
+           $correcto = "<span style='color: green;'>Información guardada</span>";
+           
        } else {
-           $error = "Faltan campos por rellenar";
+        $error = "<span style='color: red;'>Faltan campos por rellenar</span>";
+
        }
    }
 ?>
@@ -54,7 +56,7 @@
                 <select name="idioma">
                     <option hidden></option>
                     <option value="Español" <?= $_SESSION['idioma']=="Español"?'selected':""?>>Español</option>
-                    <option value="Ingles" <?= $_SESSION['idioma']=="Ingles"?'selected':""?>>Ingles</option>
+                    <option value="Ingles" <?= $_SESSION['idioma']=="Inglés"?'selected':""?>>Inglés</option>
                 </select>
             </div>
             <div>
