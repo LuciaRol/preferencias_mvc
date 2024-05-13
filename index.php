@@ -14,7 +14,7 @@
        $_SESSION['horario'] = "GMT-2"; 
    }
    
-   // Aquí va el posteado de las varaibles
+   // Aquí va el posteado de las variables
    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        if (!empty($_POST['idioma']) && !empty($_POST['perfil']) && !empty($_POST['horario'])) {
            $_SESSION['idioma'] = $_POST['idioma'];
@@ -28,13 +28,15 @@
 ?>
 
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Establecer preferencias</title>
 </head>
 
 <body>
@@ -43,14 +45,13 @@
     <?php }?>
     <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
         <fieldset>
-            <legend>Preferencias</legend>
+            <h1>Establecer preferencias</h1>
             <?php if(!empty($correcto)){?>
                 <p><?= $correcto?></p>
             <?php }?>
             <div>
                 <label for="idioma">Idioma</label>
                 <select name="idioma">
-                    
                     <option hidden></option>
                     <option value="Español" <?= $_SESSION['idioma']=="Español"?'selected':""?>>Español</option>
                     <option value="Ingles" <?= $_SESSION['idioma']=="Ingles"?'selected':""?>>Ingles</option>
